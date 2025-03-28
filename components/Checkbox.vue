@@ -1,17 +1,25 @@
 <template>
-  <label :for="props.label" class="flex gap-x-4">
-    <input
-      :id="props.label"
-      v-model="isChecked"
-      :name="props.label"
-      type="checkbox"
-      class="custom-checkbox cursor-pointer rounded checked:!bg-primary focus:ring-0 disabled:cursor-not-allowed disabled:checked:!bg-slate-300"
-      :class="props.inputClass"
-      :disabled="props.disabled"
-      :value="props.value"
-    />
-    <span v-if="props.label">{{ props.label }} </span>
-  </label>
+  <div class="flex items-center gap-x-2">
+    <div class="relative mt-1 cursor-pointer">
+      <input
+        :id="props.label"
+        v-model="isChecked"
+        type="checkbox"
+        :value="props.value"
+        class="size-5 rounded-md border appearance-none checked:bg-secondary relative"
+        :class="props.inputClass"
+      />
+      <Icon
+        name="uil:check"
+        class="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-white pointer-events-none"
+      />
+    </div>
+    <label
+      :for="props.label"
+      class="text-sm font-medium text-gray-900 cursor-pointer"
+      >{{ props.value }}</label
+    >
+  </div>
 </template>
 
 <script setup>
@@ -49,17 +57,4 @@ const isChecked = computed({
 });
 </script>
 
-<style lang="css">
-.custom-checkbox[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  color: #069dd8;
-  cursor: pointer;
-  overflow: visible;
-  border-radius: 4px;
-  &:focus {
-    --tw-ring-color: #069dd8;
-    --tw-ring-offset-width: 0px;
-  }
-}
-</style>
+<style lang="css"></style>

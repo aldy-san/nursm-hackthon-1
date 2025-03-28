@@ -6,7 +6,7 @@ export default {
       colors: {
         primary: "#006A71",
         secondary: "#48A6A7",
-        tertiart: "#9ACBD0",
+        tertiary: "#9ACBD0",
         merino: "#F2EFE7",
       },
     },

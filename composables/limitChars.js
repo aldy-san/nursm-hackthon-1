@@ -1,4 +1,4 @@
-export default (str, limit = 45) => {
+export default (str, limit = 75) => {
   if (str.length > limit) {
     return str.substring(0, limit) + "...";
   }
