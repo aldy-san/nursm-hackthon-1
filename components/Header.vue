@@ -1,7 +1,7 @@
 <template>
-  <header class="container mx-auto py-3">
-    <div class="flex items-center gap-8">
-      <span class="font-bold text-3xl">LOGO</span>
+  <header class="py-3 border-b border-gray-300">
+    <div class="container mx-auto flex items-center gap-4 md:gap-8 px-4">
+      <span class="font-bold text-3xl max-md:hidden">LOGO</span>
       <div class="w-full relative">
         <Icon
           name="uil:search"
@@ -9,19 +9,27 @@
         />
         <input
           type="text"
-          class="input-rounded !pl-10"
+          class="input-default !pl-10"
           placeholder="Search Anything"
         />
       </div>
-      <button class="px-2 aspect-square rounded-md hover:bg-slate-100">
-        <Icon name="mdi:cart-outline" />
-      </button>
-      <button class="px-2 aspect-square rounded-md hover:bg-slate-100">
-        <Icon name="mdi:bell-outline" />
-      </button>
-      <button class="px-2 aspect-square rounded-md hover:bg-slate-100">
-        <Icon name="uil:user-circle" />
-      </button>
+      <div class="flex gap-4">
+        <button
+          class="px-2 aspect-square hover:bg-black hover:text-white transition-all"
+        >
+          <Icon name="mdi:cart-outline" />
+        </button>
+        <button
+          class="px-2 aspect-square hover:bg-black hover:text-white transition-all"
+        >
+          <Icon name="mdi:bell-outline" />
+        </button>
+        <button
+          class="px-2 aspect-square hover:bg-black hover:text-white transition-all"
+        >
+          <Icon name="uil:user-circle" />
+        </button>
+      </div>
     </div>
   </header>
 </template>

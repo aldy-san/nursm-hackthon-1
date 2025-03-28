@@ -1,9 +1,9 @@
 <template>
   <div
-    class="relative px-4 py-2 border cursor-pointer flex items-center gap-4 rounded-lg"
+    class="relative px-4 py-2 border cursor-pointer flex items-center gap-4"
     @click="isOpen = !isOpen"
   >
-    <span>{{ props.placeholder }}</span>
+    <span>{{ value || props.placeholder }}</span>
     <Icon name="uil:angle-down" class="text-lg" />
     <ul
       v-if="isOpen"
@@ -13,6 +13,7 @@
         v-for="(item, i) in props.options"
         :key="i"
         class="px-4 py-2 hover:bg-slate-50 bg-white"
+        @click="emits('update:modelValue', item)"
       >
         {{ item }}
       </li>
@@ -21,7 +22,12 @@
 </template>
 
 <script setup>
+const isOpen = ref(false);
 const props = defineProps({
+  modelValue: {
+    type: [Array, String, Boolean],
+    default: null,
+  },
   placeholder: {
     type: String,
     default: "Select",
@@ -31,5 +37,14 @@ const props = defineProps({
     default: Array,
   },
 });
-const isOpen = ref(false);
+
+const emits = defineEmits(["update:modelValue"]);
+const value = computed({
+  get() {
+    return props.modelValue;
+  },
+  set(val) {
+    emits("update:modelValue", val);
+  },
+});
 </script>

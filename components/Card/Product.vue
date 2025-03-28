@@ -1,6 +1,8 @@
 <template>
-  <div class="shadow-sm border rounded-lg grid gap-2 overflow-hidden">
-    <img src="https://placehold.co/400" alt="" />
+  <div
+    class="hover:shadow-md bg-white transition-all cursor-pointer border border-transparent grid gap-2 overflow-hidden aspect-[2/3]"
+  >
+    <img src="https://placehold.co/400" class="aspect-square w-full" />
     <div class="grid gap-1 px-4 pb-4">
       <span class="text-xs">{{
         limitChars(
@@ -10,7 +12,7 @@
       <div class="flex gap-2 items-center">
         <span class="font-bold text-lg">Rp. 168.000</span>
         <span class="font-medium line-through text-xs text-slate-500"
-          >Rp. 168.000</span
+          >Rp. 199.000</span
         >
       </div>
       <div class="flex items-center gap-1">

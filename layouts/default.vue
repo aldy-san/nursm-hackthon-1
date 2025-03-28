@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-sans">
     <Header />
     <main class="min-h-screen">
       <slot />

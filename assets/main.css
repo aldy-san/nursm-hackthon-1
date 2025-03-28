@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.input-default {
+/*.input-default {
   @apply border-transparent p-0 font-medium focus:border-transparent focus:ring-0;
+}*/
+.input-default {
+  @apply w-full border-2 border-slate-200 focus:border-black px-6 py-2 outline-none;
 }
-.input-rounded {
-  @apply w-full rounded-full border-2 border-slate-200 focus:border-primary px-6 py-2 outline-none;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }

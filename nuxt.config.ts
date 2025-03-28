@@ -8,7 +8,13 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/main.css"],
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxtjs/google-fonts"],
+  googleFonts: {
+    // Options
+    families: {
+      Oswald: true,
+    },
+  },
   icon: {
     serverBundle: {
       collections: ["uil", "mdi"], // <!--- this
