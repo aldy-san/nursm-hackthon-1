@@ -49,6 +49,7 @@ const triggerLoading = () => {
     isLoading.value = false;
   }, 1500);
 };
+triggerLoading();
 watch(
   () => sort.value,
   () => {

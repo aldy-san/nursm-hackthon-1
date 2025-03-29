@@ -7,8 +7,11 @@
         </button>
         <ClientOnly>
           <swiper-container ref="bannerRef">
-            <swiper-slide v-for="(slide, i) in 10" :key="i">
-              <img :src="`https://placehold.co/${i + 1}00`" class="w-full" />
+            <swiper-slide v-for="i in 10" :key="i">
+              <img
+                :src="`/assets/images/bag-${(i % 3) + 1}.jpg`"
+                class="w-full object-contain object-center aspect-square"
+              />
             </swiper-slide>
           </swiper-container>
         </ClientOnly>
@@ -22,10 +25,10 @@
         </button>
         <ClientOnly>
           <swiper-container ref="thumbRef">
-            <swiper-slide v-for="(slide, i) in 10" :key="i">
+            <swiper-slide v-for="(, i) in 10" :key="i">
               <img
-                :src="`https://placehold.co/${i + 1}00`"
-                class="hover:border-black border"
+                :src="`/assets/images/bag-${(i % 3) + 1}.jpg`"
+                class="hover:border-black border object-contain object-center w-full self-center my-auto aspect-square"
                 @click="bannerSwiper.to(i)"
               />
             </swiper-slide>

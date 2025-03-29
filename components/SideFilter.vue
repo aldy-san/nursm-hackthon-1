@@ -17,6 +17,16 @@
             @click="handleFilter(item, 'category')"
           />
         </div>
+        <span class="font-medium">Gender</span>
+        <div class="flex flex-wrap gap-1 capitalize">
+          <Button
+            v-for="(item, i) in genders"
+            :key="i"
+            :text="item"
+            :is-active="filter.gender.includes(item)"
+            @click="handleFilter(item, 'gender')"
+          />
+        </div>
         <span class="font-medium">Price</span>
         <input
           v-model="filter.price_from"
@@ -24,6 +34,7 @@
           class="input-default text-sm"
           placeholder="From"
           @keydown="useOnlyNumber"
+          @input="onSearch"
         />
         <input
           v-model="filter.price_to"
@@ -31,6 +42,7 @@
           class="input-default text-sm"
           placeholder="To"
           @keydown="useOnlyNumber"
+          @input="onSearch"
         />
         <span class="font-medium">Rating</span>
         <div class="flex flex-wrap gap-1 capitalize">
@@ -60,6 +72,7 @@ const filter = ref({
   price_from: route.query.price_from || "",
   price_to: route.query.price_to || "",
   rating: route.query?.rating?.split(",") || [],
+  gender: route.query?.gender?.split(",") || [],
 });
 const categories = [
   "memory",
@@ -72,7 +85,9 @@ const categories = [
   "conclusion",
   "moment",
 ];
+const genders = ["Men", "Women", "Boys", "Girls", "Babies", "Unisex"];
 const handleFilter = (newItem, key) => {
+  emits("triggerLoading");
   if (!filter.value[key].includes(newItem)) {
     filter.value[key].push(newItem);
   } else {
@@ -85,7 +100,6 @@ const onSearch = useDebounceFn(async () => {
 watch(
   () => filter.value,
   () => {
-    onSearch();
     router.replace({
       query: {
         category: filter.value.category?.length
@@ -95,6 +109,9 @@ watch(
         price_to: filter.value.price_to || undefined,
         rating: filter.value.rating?.length
           ? filter.value.rating.join(",")
+          : undefined,
+        gender: filter.value.gender?.length
+          ? filter.value.gender.join(",")
           : undefined,
       },
     });

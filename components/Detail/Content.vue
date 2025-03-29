@@ -82,7 +82,14 @@
     <hr />
     <NuxtLink class="flex items-center gap-6">
       <img src="https://placehold.co/400" alt="" class="size-12 rounded-full" />
-      <span>Brand Name</span>
+      <div class="grid gap-1">
+        <span>Brand Name</span>
+        <div class="flex items-center gap-2">
+          <Icon name="mdi:star" class="text-yellow-500" />
+          <span class="text-sm">4.5/5.0</span>
+        </div>
+      </div>
+      <span></span>
       <div class="ml-auto">
         <Button
           :text="isFollowed ? 'Followed' : 'Follow'"

@@ -7,7 +7,7 @@
       </template>
     </div>
     <div class="grid grid-cols-3 gap-4">
-      <div class="col-span-2 grid gap-4 grid-cols-5">
+      <div class="col-span-2 grid gap-8 grid-cols-5 border-r pr-4">
         <DetailImage />
         <DetailContent />
         <DetailReview />

@@ -23,9 +23,9 @@ const emits = defineEmits(["click"]);
 
 <style>
 .btn {
-  @apply flex items-center justify-center gap-3 border border-gray-300 flex-1 text-center font-medium px-3 py-1 hover:opacity-75 hover:border-opacity-75 cursor-pointer transition-all;
+  @apply flex items-center justify-center gap-3 active:bg-gray-200 border border-gray-300 flex-1 text-center font-medium px-3 py-1 hover:opacity-75 hover:border-opacity-75 cursor-pointer transition-all;
 }
 .btn-primary {
-  @apply bg-black border-white text-white;
+  @apply bg-black border-white text-white active:bg-gray-700;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <header class="py-3 border-b border-gray-300">
     <div class="container mx-auto flex items-center gap-4 md:gap-8 px-4">
-      <span class="font-bold text-3xl max-md:hidden">LOGO</span>
+      <NuxtLink to="/" class="font-bold text-3xl max-md:hidden">LOGO</NuxtLink>
       <div class="w-full relative">
         <Icon
           name="uil:search"

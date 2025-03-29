@@ -3,11 +3,14 @@
     to="/products/1"
     class="hover:shadow-md bg-white transition-all cursor-pointer border border-transparent grid gap-2 overflow-hidden aspect-[2/3]"
   >
-    <img src="https://placehold.co/400" class="aspect-square w-full" />
+    <img
+      :src="`/assets/images/bag-${randomDigit}.jpg`"
+      class="aspect-square w-full"
+    />
     <div class="grid gap-1 px-4 pb-4">
       <span class="text-xs">{{
         limitChars(
-          "Cartiera Dapper Bag Tas Laptop Ransel Pria Wanita Anti Air Waterproof Premium Backpack Sekolah Kantor Kerja Outdoor"
+          "Lorem Ipsum Bag, something that bag is good, idk what i say bro hehe"
         )
       }}</span>
       <div class="flex gap-2 items-center">
@@ -25,3 +28,9 @@
     </div>
   </NuxtLink>
 </template>
+
+<script setup>
+const randomDigit = computed(() => {
+  return Math.floor(Math.random() * 3) + 1;
+});
+</script>

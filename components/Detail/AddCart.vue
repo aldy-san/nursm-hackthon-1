@@ -1,6 +1,6 @@
 <template>
   <div class="h-full relative">
-    <div class="border text-lg px-3 py-2 grid gap-4 sticky top-4 left-0">
+    <div class="text-lg px-3 py-2 grid gap-4 sticky top-4 left-0">
       <span class="text-2xl font-medium">Variant & Quantity</span>
       <hr />
       <span class="text-xl font-medium">Choose Color</span>
@@ -27,7 +27,7 @@
       <span class="text-xl font-medium">Change Quantity</span>
       <div class="flex">
         <button
-          class="size-8 flex items-center justify-center border hover:bg-black hover:text-white"
+          class="size-8 flex items-center justify-center border hover:opacity-75 hover:border-opacity-75 transition-all active:bg-gray-200"
           @click="qty !== 1 && qty--"
         >
           <Icon name="uil:minus" />
@@ -37,7 +37,7 @@
           >{{ qty }}</span
         >
         <button
-          class="size-8 flex items-center justify-center border hover:bg-black hover:text-white"
+          class="size-8 flex items-center justify-center border hover:opacity-75 hover:border-opacity-75 transition-all active:bg-gray-200"
           @click="qty++"
         >
           <Icon name="uil:plus" />
