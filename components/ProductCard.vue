@@ -1,5 +1,6 @@
 <template>
-  <div
+  <NuxtLink
+    to="/products/1"
     class="hover:shadow-md bg-white transition-all cursor-pointer border border-transparent grid gap-2 overflow-hidden aspect-[2/3]"
   >
     <img src="https://placehold.co/400" class="aspect-square w-full" />
@@ -22,5 +23,5 @@
         <span class="text-sm">28 Sold</span>
       </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>

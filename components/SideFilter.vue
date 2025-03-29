@@ -39,7 +39,7 @@
             :key="i"
             :text="item"
             :is-active="filter.rating.includes(item.toString())"
-            @click="handleFilter(item, 'rating')"
+            @click="handleFilter(item.toString(), 'rating')"
           />
         </div>
       </div>
