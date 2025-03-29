@@ -10,7 +10,6 @@
       <div class="col-span-2 grid gap-4 grid-cols-5">
         <DetailImage />
         <DetailContent />
-        <hr />
         <DetailReview />
       </div>
       <DetailAddCart />
