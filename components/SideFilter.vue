@@ -1,5 +1,7 @@
 <template>
-  <aside class="grid mb-auto pt-8 max-md:border-b max-md:pb-4">
+  <aside
+    class="grid mb-auto max-md:border-b max-md:pb-4 sticky top-4 left-0 mt-8"
+  >
     <div class="flex items-center justify-between" @click="isOpen = !isOpen">
       <span class="font-semibold text-xl max-md:cursor-pointer">Filter</span>
       <Icon v-if="isOpen" name="uil:angle-up" class="text-2xl md:hidden" />
