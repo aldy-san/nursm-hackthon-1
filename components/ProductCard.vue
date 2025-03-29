@@ -8,9 +8,9 @@
       class="aspect-square w-full"
     />
     <div class="grid gap-1 px-4 pb-4">
-      <span class="text-xs">{{
+      <span class="text-sm">{{
         limitChars(
-          "Lorem Ipsum Bag, something that bag is good, idk what i say bro hehe"
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
         )
       }}</span>
       <div class="flex gap-2 items-center">
