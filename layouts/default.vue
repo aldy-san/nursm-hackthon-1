@@ -7,4 +7,8 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+useSeoMeta({
+  title: "Product Catalog",
+});
+</script>
