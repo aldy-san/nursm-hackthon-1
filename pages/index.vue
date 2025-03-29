@@ -5,7 +5,12 @@
     <SideFilter @trigger-loading="triggerLoading" />
     <div class="grid md:col-span-4 gap-2 mb-auto md:pl-8 md:pt-4">
       <div class="flex justify-between items-center">
-        <span>Showing 1 - 20 of <span class="underline">Something</span></span>
+        <span
+          >Showing 1 - 12
+          <template v-if="route.query.search">
+            of <span class="underline">{{ route.query.search }}</span></template
+          ></span
+        >
         <div class="flex items-center gap-4">
           <span>Sort By: </span>
           <Select v-model="sort" :options="['Name', 'Popular']" />
@@ -41,6 +46,7 @@
 </template>
 
 <script setup>
+const route = useRoute();
 const sort = ref("Name");
 const isLoading = ref(false);
 const triggerLoading = () => {

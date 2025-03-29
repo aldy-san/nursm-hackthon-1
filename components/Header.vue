@@ -8,9 +8,11 @@
           class="absolute left-4 top-1/2 -translate-y-1/2"
         />
         <input
+          v-model="search"
           type="text"
           class="input-default !pl-10"
           placeholder="Search Anything"
+          @keydown.enter="goTo"
         />
       </div>
       <div class="flex gap-4">
@@ -33,3 +35,12 @@
     </div>
   </header>
 </template>
+
+<script setup>
+const route = useRoute();
+const router = useRouter();
+const search = ref(route.query.search);
+const goTo = () => {
+  router.push(`/?search=${search.value}`);
+};
+</script>

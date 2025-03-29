@@ -44,7 +44,7 @@
           @keydown="useOnlyNumber"
           @input="onSearch"
         />
-        <span class="font-medium">Rating</span>
+        <span class="font-medium">Rating </span>
         <div class="flex flex-wrap gap-1 capitalize">
           <Button
             v-for="(item, i) in 5"
@@ -60,7 +60,6 @@
 </template>
 
 <script setup>
-import { Icon } from "#components";
 import { useDebounceFn } from "@vueuse/core";
 
 const isOpen = ref(true);
@@ -69,10 +68,10 @@ const route = useRoute();
 const router = useRouter();
 const filter = ref({
   category: route.query?.category?.split(",") || [],
-  price_from: route.query.price_from || "",
-  price_to: route.query.price_to || "",
   rating: route.query?.rating?.split(",") || [],
   gender: route.query?.gender?.split(",") || [],
+  price_from: route.query.price_from || "",
+  price_to: route.query.price_to || "",
 });
 const categories = [
   "memory",
@@ -97,24 +96,38 @@ const handleFilter = (newItem, key) => {
 const onSearch = useDebounceFn(async () => {
   emits("triggerLoading");
 }, 500);
+
+const handleReplace = () => {
+  router.replace({
+    query: {
+      ...route.query,
+      category: filter.value.category?.length
+        ? filter.value.category.join(",")
+        : undefined,
+      price_from: filter.value.price_from || undefined,
+      price_to: filter.value.price_to || undefined,
+      rating: filter.value.rating?.length
+        ? filter.value.rating.join(",")
+        : undefined,
+      gender: filter.value.gender?.length
+        ? filter.value.gender.join(",")
+        : undefined,
+    },
+  });
+};
+
 watch(
   () => filter.value,
   () => {
-    router.replace({
-      query: {
-        category: filter.value.category?.length
-          ? filter.value.category.join(",")
-          : undefined,
-        price_from: filter.value.price_from || undefined,
-        price_to: filter.value.price_to || undefined,
-        rating: filter.value.rating?.length
-          ? filter.value.rating.join(",")
-          : undefined,
-        gender: filter.value.gender?.length
-          ? filter.value.gender.join(",")
-          : undefined,
-      },
-    });
+    handleReplace();
+  },
+  { deep: true }
+);
+watch(
+  () => route.query.search,
+  () => {
+    emits("triggerLoading");
+    handleReplace();
   },
   { deep: true }
 );
