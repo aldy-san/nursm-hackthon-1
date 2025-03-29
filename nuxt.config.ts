@@ -8,7 +8,12 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/main.css"],
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxtjs/google-fonts"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/icon",
+    "@nuxtjs/google-fonts",
+    "nuxt-swiper",
+  ],
   googleFonts: {
     // Options
     families: {

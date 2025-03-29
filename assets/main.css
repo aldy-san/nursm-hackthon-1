@@ -17,3 +17,21 @@
 .fade-leave-to {
   opacity: 0;
 }
+
+.swiper-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+  min-height: 0;
+  min-width: 0;
+}
+.nav {
+  @apply absolute transition-all  top-1/2 -translate-y-1/2 z-10 text-2xl size-6 text-white flex items-center justify-center border bg-black hover:opacity-100 opacity-0 group-hover:opacity-75;
+}
+.prev {
+  @apply -left-3;
+}
+.next {
+  @apply -right-3;
+}
