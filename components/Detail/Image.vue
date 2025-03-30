@@ -1,5 +1,5 @@
 <template>
-  <div class="relative col-span-2">
+  <div class="relative md:col-span-2">
     <div class="grid gap-1 mb-auto sticky top-4 left-0">
       <div class="swiper-container group">
         <button class="nav prev" @click="bannerSwiper.prev()">

@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    to="/products/1"
+    to="/product/1"
     class="hover:shadow-md bg-white transition-all cursor-pointer border border-transparent grid gap-2 overflow-hidden aspect-[2/3]"
   >
     <img

@@ -1,6 +1,6 @@
 <template>
-  <div class="col-span-3 grid gap-4 mb-auto">
-    <h1 class="font-medium text-3xl">
+  <div class="md:col-span-3 grid gap-4 mb-auto">
+    <h1 class="font-medium text-2xl md:text-3xl">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s

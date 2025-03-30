@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full relative">
+  <div class="h-full max-md:hidden relative">
     <div class="text-lg px-3 py-2 grid gap-4 sticky top-4 left-0">
       <span class="text-2xl font-medium">Variant & Quantity</span>
       <hr />

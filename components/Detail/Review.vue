@@ -3,7 +3,9 @@
     <span class="text-2xl font-semibold">Reviews</span>
     <hr />
     <div class="hover:border-black transition-all p-4">
-      <div class="flex items-center justify-between">
+      <div
+        class="flex max-md:flex-col max-md:gap-4 items-center justify-between"
+      >
         <div class="grid gap-2">
           <span class="text-4xl">4.8/5.0</span>
           <div class="flex">
