@@ -25,7 +25,7 @@
         </button>
         <ClientOnly>
           <swiper-container ref="thumbRef">
-            <swiper-slide v-for="(, i) in 10" :key="i">
+            <swiper-slide v-for="i in 10" :key="i">
               <img
                 :src="`/assets/images/bag-${(i % 3) + 1}.jpg`"
                 class="hover:border-black border object-contain object-center w-full self-center my-auto aspect-square"
