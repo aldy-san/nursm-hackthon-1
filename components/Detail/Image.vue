@@ -29,7 +29,7 @@
               <img
                 :src="`/assets/images/bag-${(i % 3) + 1}.jpg`"
                 class="hover:border-black border object-contain object-center w-full self-center my-auto aspect-square"
-                @click="bannerSwiper.to(i)"
+                @click="bannerSwiper.to(i - 1)"
               />
             </swiper-slide>
           </swiper-container>
